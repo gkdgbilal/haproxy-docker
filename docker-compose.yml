@@ -1,0 +1,18 @@
+version: "3"
+
+services: 
+    flask:
+        image: dockercloud/hello-world
+        container_name: flask
+        ports:
+            - "4444:8888"
+    nodejs:
+        image: dockercloud/hello-world
+        container_name: nodejs
+        ports:
+            - "5555:8888"
+    haproxy:
+        build: ./haproxy
+        container_name: haproxy
+        ports:
+            - "8888:8888"
